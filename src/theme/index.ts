@@ -9,6 +9,9 @@ const theme: Config["theme"] = {
   fontSize: typography,
   extend: {
     colors: colors,
+    fontFamily: {
+      kaisei: ["Kaisei Tokumin", "sans"],
+    },
   },
 };
 

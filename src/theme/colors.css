@@ -6,6 +6,7 @@
     --body: theme(colors.slate.50);
     --border: theme(colors.slate.200);
     --muted: theme(colors.slate.50);
+    --foreground: #8f91a1;
     --destructive: #db4e66;
     --supportive-01: #4ca154;
     --supportive-muted-01: #e2fbe8;

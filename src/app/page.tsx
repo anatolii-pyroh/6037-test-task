@@ -1,9 +1,7 @@
+import BookSessionView from "@/components/views/book-session-view";
+
 function Page() {
-  return (
-    <div className="container flex grow items-center justify-center py-2">
-      Page
-    </div>
-  );
+  return <BookSessionView />;
 }
 
 export default Page;
