@@ -17,7 +17,6 @@ const sizeComponentMap: Record<
   NonNullable<TypographyProps["size"]>,
   React.ElementType
 > = {
-  xs: "small",
   sm: "small",
   md: "div",
   lg: "h4",
@@ -27,7 +26,6 @@ const sizeComponentMap: Record<
 const variantsClasses = cva(["inline-block cursor-auto"], {
   variants: {
     size: {
-      xs: "text-xs",
       sm: "text-sm",
       md: "text-base",
       lg: "text-lg",
@@ -36,11 +34,6 @@ const variantsClasses = cva(["inline-block cursor-auto"], {
     color: {
       default: "text-black",
     },
-    fontWeight: {
-      default: "font-semibold",
-      medium: "font-medium",
-      normal: "font-normal",
-    },
   },
 });
 
@@ -48,7 +41,6 @@ const Typography = ({
   className,
   size = "md",
   color = "default",
-  fontWeight = "default",
   as: ComponentProp,
   onClick,
   ...props
@@ -57,7 +49,7 @@ const Typography = ({
 
   return (
     <Component
-      className={cn(variantsClasses({ size, color, fontWeight }), className)}
+      className={cn(variantsClasses({ size, color }), className)}
       onClick={onClick}
       role={onClick ? "button" : undefined}
       tabIndex={onClick ? 0 : undefined}
