@@ -1,10 +1,14 @@
 import { CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
-const CarouselNavigationButtons = () => {
+interface Props {
+  className?: string;
+}
+
+const CarouselNavigationButtons = ({ className }: Props) => {
   return (
     <>
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious className={className} />
+      <CarouselNext className={className} />
     </>
   );
 };

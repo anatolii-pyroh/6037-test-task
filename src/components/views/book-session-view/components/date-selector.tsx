@@ -1,33 +1,45 @@
 "use client";
 
 import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
-import CarouselNavigationButtons from "@/components/ui/carousel/carousel-navigation-buttons";
+  addWeeks,
+  eachDayOfInterval,
+  format,
+  isFirstDayOfMonth,
+  isLastDayOfMonth,
+  startOfDay,
+} from "date-fns";
+import { useState } from "react";
+
+import { SessionDateInfo } from "@/typings/date.type";
+
+import DaySelector from "@/components/views/book-session-view/components/day-selector";
+import TimeSelector from "@/components/views/book-session-view/components/time-selector";
 
 const DateSelector = () => {
-  return (
-    <Carousel>
-      <CarouselContent>
-        {Array.from({ length: 10 }).map((_, index) => (
-          <DateSelectorItem key={index} />
-        ))}
-      </CarouselContent>
+  // generating dates ranges for the next 6 weeks
+  const [dateRanges, setDateRanges] = useState<SessionDateInfo[]>(() => {
+    const today = startOfDay(new Date());
+    const endDate = startOfDay(addWeeks(today, 6));
 
-      <CarouselNavigationButtons />
-    </Carousel>
-  );
-};
+    const dateRange = eachDayOfInterval({ start: today, end: endDate });
 
-const DateSelectorItem = () => {
+    return dateRange.map((date) => ({
+      date,
+      dayName: format(date, "EEE"),
+      dayNumber: format(date, "d"),
+      month: format(date, "MMM"),
+      timestamp: Math.floor(date.getTime() / 1000),
+      isFirstDay: isFirstDayOfMonth(date),
+      isLastDay: isLastDayOfMonth(date),
+    })) as SessionDateInfo[];
+  });
+
   return (
-    <CarouselItem className="basis-1/5 lg:basis-1/6">
-      <div className="px-1">
-        <button className="size-16 rounded-lg border px-4 py-2">123</button>
-      </div>
-    </CarouselItem>
+    <>
+      <DaySelector dates={dateRanges} />
+
+      <TimeSelector />
+    </>
   );
 };
 

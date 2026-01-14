@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Typography } from "@/components/ui/typography";
 import DateSelector from "@/components/views/book-session-view/components/date-selector";
-import TimeSelector from "@/components/views/book-session-view/components/time-selector";
 
 const BookSessionView = () => {
   return (
@@ -30,8 +29,6 @@ const BookSessionView = () => {
         </div>
 
         <DateSelector />
-
-        <TimeSelector />
 
         <Button className="w-full max-w-[370px]">Confirm</Button>
       </Card>
