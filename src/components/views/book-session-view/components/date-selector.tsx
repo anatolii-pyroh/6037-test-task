@@ -10,14 +10,14 @@ import {
 } from "date-fns";
 import { useState } from "react";
 
-import { SessionDateInfo } from "@/typings/date.type";
+import { Session, SessionDateOption } from "@/typings/date.type";
 
 import DaySelector from "@/components/views/book-session-view/components/day-selector";
 import TimeSelector from "@/components/views/book-session-view/components/time-selector";
 
 const DateSelector = () => {
-  // generating dates ranges for the next 6 weeks
-  const [dateRanges, setDateRanges] = useState<SessionDateInfo[]>(() => {
+  const [session, setSession] = useState<Session>(null);
+  const [dateRanges, setDateRanges] = useState<SessionDateOption[]>(() => {
     const today = startOfDay(new Date());
     const endDate = startOfDay(addWeeks(today, 6));
 
@@ -28,17 +28,20 @@ const DateSelector = () => {
       dayName: format(date, "EEE"),
       dayNumber: format(date, "d"),
       month: format(date, "MMM"),
-      timestamp: Math.floor(date.getTime() / 1000),
       isFirstDay: isFirstDayOfMonth(date),
       isLastDay: isLastDayOfMonth(date),
-    })) as SessionDateInfo[];
+    })) as SessionDateOption[];
   });
 
   return (
     <>
-      <DaySelector dates={dateRanges} />
+      <DaySelector
+        dates={dateRanges}
+        session={session}
+        setSession={setSession}
+      />
 
-      <TimeSelector />
+      {session?.date ? <TimeSelector /> : null}
     </>
   );
 };
