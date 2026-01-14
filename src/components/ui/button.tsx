@@ -15,6 +15,7 @@ const buttonVariants = cva(
     "whitespace-nowrap text-sm font-semibold",
     "hover:shadow-none",
     "touch-manipulation",
+    "disabled:pointer-events-none disabled:border-0 disabled:text-[#c0c1d1] disabled:shadow-none",
   ],
   {
     variants: {
@@ -24,6 +25,7 @@ const buttonVariants = cva(
           "bg-supportive-1 text-white shadow-md hover:bg-supportive-1/80",
         destructive:
           "bg-destructive text-white shadow-md hover:bg-destructive/80",
+        transparent: "bg-transparent text-black hover:no-underline",
       },
       size: {
         sm: "h-8",
