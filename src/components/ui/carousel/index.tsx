@@ -10,6 +10,14 @@ import { cn } from "@/lib/common.lib";
 
 import { Button } from "@/components/ui/button";
 
+const maskOnRight =
+  "linear-gradient(to right, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 90%, transparent)";
+const maskOnLeft =
+  "linear-gradient(to right, transparent, rgb(0, 0, 0) 10%, rgb(0, 0, 0) 100%)";
+const bothMasks =
+  "linear-gradient(to right, transparent, rgb(0, 0, 0) 10%, rgb(0, 0, 0) 90%, transparent)";
+const noMask = "none";
+
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
 type CarouselOptions = UseCarouselParameters[0];
@@ -158,10 +166,27 @@ const CarouselContent = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => {
-  const { carouselRef, orientation } = useCarousel();
+  const { carouselRef, orientation, canScrollPrev, canScrollNext } =
+    useCarousel();
+
+  const getMaskImage = () => {
+    if (canScrollPrev && canScrollNext) {
+      return bothMasks;
+    }
+
+    if (canScrollPrev) return maskOnLeft;
+
+    if (canScrollNext) return maskOnRight;
+
+    return noMask;
+  };
 
   return (
-    <div ref={carouselRef} className="overflow-hidden">
+    <div
+      ref={carouselRef}
+      style={{ maskImage: getMaskImage() }}
+      className="overflow-hidden"
+    >
       <div
         ref={ref}
         className={cn(
