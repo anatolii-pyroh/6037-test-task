@@ -33,6 +33,7 @@ const variantsClasses = cva(["inline-block cursor-auto"], {
     },
     color: {
       default: "text-black",
+      white: "text-white",
     },
   },
 });
