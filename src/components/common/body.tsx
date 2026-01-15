@@ -1,12 +1,12 @@
 import { Poppins } from "next/font/google";
 import { PropsWithChildren } from "react";
-import { Toaster } from "sonner";
 
 import { cn } from "@/lib/common.lib";
 import backgroundImage from "@/public/images/body-background.png";
 
 import ContainerWithBgImage from "@/components/common/container-with-bg-image";
 import Header from "@/components/common/header";
+import Toaster from "@/components/ui/sonner";
 
 const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],

@@ -44,7 +44,7 @@ const DrawerContent = React.forwardRef<
       onOpenAutoFocus={(e) => e.preventDefault()}
       onCloseAutoFocus={(e) => e.preventDefault()}
       className={cn(
-        "fixed inset-x-0 bottom-0 z-50 flex h-auto max-h-[95%] flex-col rounded-t-[10px] border bg-background focus:outline-none",
+        "fixed inset-x-0 bottom-0 z-50 flex h-auto max-h-[95%] flex-col rounded-t-[24px] border bg-background focus:outline-none",
         className,
       )}
       {...props}
