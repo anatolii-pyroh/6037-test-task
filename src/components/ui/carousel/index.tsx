@@ -233,10 +233,10 @@ const CarouselPrevious = React.forwardRef<
       ref={ref}
       variant="transparent"
       className={cn(
-        "size-6 rounded-full lg:absolute",
+        "size-6 rounded-full md:absolute",
         orientation === "horizontal"
-          ? "lg:-left-12 lg:top-1/2 lg:-translate-y-1/2"
-          : "rotate-90 lg:-top-12 lg:left-1/2 lg:-translate-x-1/2",
+          ? "md:-left-12 md:top-1/2 md:-translate-y-1/2"
+          : "rotate-90 md:-top-12 md:left-1/2 md:-translate-x-1/2",
         disabled && "!bg-transparent disabled:text-[#c0c1d1]",
         className,
       )}
@@ -262,10 +262,10 @@ const CarouselNext = React.forwardRef<
       ref={ref}
       variant="transparent"
       className={cn(
-        "size-6 rounded-full lg:absolute",
+        "size-6 rounded-full md:absolute",
         orientation === "horizontal"
-          ? "lg:-right-12 lg:top-1/2 lg:-translate-y-1/2"
-          : "rotate-90 lg:-bottom-12 lg:left-1/2 lg:-translate-x-1/2",
+          ? "md:-right-12 md:top-1/2 md:-translate-y-1/2"
+          : "rotate-90 md:-bottom-12 md:left-1/2 md:-translate-x-1/2",
         disabled && "!bg-transparent disabled:text-[#c0c1d1]",
         className,
       )}

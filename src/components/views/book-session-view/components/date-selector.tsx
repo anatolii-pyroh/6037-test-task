@@ -25,6 +25,7 @@ const DateSelector = () => {
     setIsLoading(true);
 
     await delay(1000);
+
     toast.success("Session confirmed");
     console.log({ timestamp });
 

@@ -43,7 +43,7 @@ const TimeSelectorItem = (props: Props) => {
   };
 
   return (
-    <CarouselItem className="basis-1/4 lg:basis-1/5">
+    <CarouselItem className="basis-1/4 md:basis-1/5">
       <div className="px-1">
         <button
           onClick={handleClick}

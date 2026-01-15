@@ -38,7 +38,7 @@ const DaySelector = (props: Props) => {
         ))}
       </CarouselContent>
 
-      <CarouselNavigationButtons className="lg:top-[calc(50%+10.5px)]" />
+      <CarouselNavigationButtons className="md:top-[calc(50%+10.5px)]" />
     </Carousel>
   );
 };
