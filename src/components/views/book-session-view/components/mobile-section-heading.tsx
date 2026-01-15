@@ -1,5 +1,8 @@
+import Image from "next/image";
+
 import { Clock } from "@/icons";
 import mobileMaskImage from "@/public/images/mobile-mask-image.png";
+import stylistImage from "@/public/images/stylist.png";
 
 import ContainerWithBgImage from "@/components/common/container-with-bg-image";
 import { Badge } from "@/components/ui/badge";
@@ -10,9 +13,9 @@ const MobileSectionHeading = () => {
   return (
     <ContainerWithBgImage
       bgImage={mobileMaskImage.src}
-      className="flex size-full items-center justify-between bg-[#F29B18] bg-cover bg-top bg-no-repeat pl-5"
+      className="flex size-full items-center justify-between overflow-hidden bg-[#F29B18] bg-cover bg-top bg-no-repeat pl-5"
     >
-      <div className="flex flex-col">
+      <div className="flex flex-1 flex-col">
         <Typography size="xl" color="white" className="text-[27px]">
           Cool session
         </Typography>
@@ -28,8 +31,24 @@ const MobileSectionHeading = () => {
         </Badge>
       </div>
 
-      <div className="flex flex-col text-white">images here</div>
+      <StylistImage />
     </ContainerWithBgImage>
+  );
+};
+
+const StylistImage = () => {
+  return (
+    <div className="relative flex-1">
+      <div className="absolute -right-24 -top-24 size-[301px] rounded-full border-4 border-[#FFAD32] bg-[#AD5708]">
+        <Image
+          src={stylistImage.src}
+          alt="Stylist"
+          width={200}
+          height={290}
+          className="absolute -top-8 left-4 h-[290px] object-contain"
+        />
+      </div>
+    </div>
   );
 };
 

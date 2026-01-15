@@ -31,7 +31,7 @@ const BookSessionContainer = (props: PropsWithChildren) => {
     <div className="flex h-screen flex-col">
       <MobileSectionHeading />
 
-      <div className="-mt-5 flex h-screen max-h-fit min-h-[50dvh] shrink-0 flex-col gap-8 overflow-hidden rounded-t-[24px] bg-white px-5 py-8 max-sm:min-h-[65dvh]">
+      <div className="z-10 -mt-5 flex h-screen max-h-fit min-h-[50dvh] shrink-0 flex-col gap-8 overflow-hidden rounded-t-[24px] bg-white px-5 py-8 max-md:min-h-[68dvh]">
         {children}
       </div>
     </div>
