@@ -5,7 +5,7 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Preview URL - https://gameloft-test-task-seven.vercel.app/
+Preview URL - https://6037-test-task.vercel.app/
 
 ## 🛠️ Tech Stack
 
@@ -28,5 +28,3 @@ Sonner - toast notifications (used for session book confirmation)
 ### **Logic**
 
 Date-fns - library for Date data manipulation
-
-Decimal.js-light - math calculations (used for product price math)
