@@ -7,7 +7,7 @@ import DateSelector from "@/components/views/book-session-view/components/date-s
 const BookSessionView = () => {
   return (
     <div className="container flex grow items-center justify-center py-2">
-      <Card className="flex w-full max-w-[568px] flex-col items-center justify-center gap-10 px-6 py-10">
+      <Card className="flex h-screen max-h-[620px] w-full max-w-[568px] flex-col items-center justify-center gap-10 px-6 py-10">
         <div className="flex items-center gap-5">
           <Image
             src="/images/stylist-avatar.png"

@@ -7,6 +7,7 @@ import { delay } from "@/lib/common.lib";
 import { generateDateRanges } from "@/lib/session.lib";
 import { Session, SessionDateOption } from "@/typings/session.type";
 
+import MotionDiv from "@/components/common/motion-div";
 import { Button } from "@/components/ui/button";
 import DaySelector from "@/components/views/book-session-view/components/day-selector";
 import TimeSelector from "@/components/views/book-session-view/components/time-selector";
@@ -38,12 +39,14 @@ const DateSelector = () => {
         setSession={setSession}
       />
 
-      {session ? (
-        <TimeSelector session={session} setSession={setSession} />
-      ) : null}
+      <MotionDiv visible={!!session}>
+        {session ? (
+          <TimeSelector session={session} setSession={setSession} />
+        ) : null}
+      </MotionDiv>
 
       <Button
-        className="w-full max-w-[370px]"
+        className="mt-auto w-full max-w-[370px]"
         loading={isLoading}
         disabled={!session?.timestamp}
         onClick={handleConfirm}
