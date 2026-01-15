@@ -17,7 +17,7 @@ const BookSessionView = () => {
             height={120}
           />
 
-          <div className="flex max-w-[310px] flex-col gap-2">
+          <div className="max-w-[310px] space-y-2">
             <Typography size="xl" className="font-kaisei">
               Book a Session
             </Typography>

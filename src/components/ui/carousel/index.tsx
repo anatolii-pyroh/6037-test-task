@@ -134,7 +134,7 @@ const Carousel = React.forwardRef<
         value={{
           carouselRef,
           api: api,
-          opts: { align: "start", ...opts },
+          opts: { ...opts, align: "start", dragFree: true },
           orientation:
             orientation || (opts?.axis === "y" ? "vertical" : "horizontal"),
           scrollPrev,
@@ -146,10 +146,7 @@ const Carousel = React.forwardRef<
         <div
           ref={ref}
           onKeyDownCapture={handleKeyDown}
-          className={cn(
-            "relative flex w-full max-w-[430px] flex-col",
-            className,
-          )}
+          className={cn("relative flex w-full flex-col", className)}
           role="region"
           aria-roledescription="carousel"
           {...props}

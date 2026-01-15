@@ -7,8 +7,14 @@ export interface SessionDateOption {
   isLastDay: boolean;
 }
 
+export interface SessionTimeSlotOption {
+  hour: number;
+  minute: number;
+  timeString: string;
+}
+
 export type Session = {
   date: Date;
-  time: string;
+  time: string | null;
   timestamp: number | null;
 } | null;

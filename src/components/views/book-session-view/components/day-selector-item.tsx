@@ -1,8 +1,22 @@
-import { cn } from "@/lib/common.lib";
-import { SessionDateOption } from "@/typings/date.type";
+import { cva } from "class-variance-authority";
+
+import { SessionDateOption } from "@/typings/session.type";
 
 import { CarouselItem } from "@/components/ui/carousel";
 import { Typography } from "@/components/ui/typography";
+
+const buttonVariants = cva(
+  "flex size-16 flex-col items-center justify-center rounded-lg border px-4 py-2 transition-colors hoverable:hover:bg-muted",
+  {
+    variants: {
+      variant: {
+        default: "hoverable:hover:bg-muted",
+        selected:
+          "bg-foreground-muted [&_div]:font-medium [&_div]:text-destructive",
+      },
+    },
+  },
+);
 
 interface Props {
   dateInfo: SessionDateOption;
@@ -16,9 +30,10 @@ const DaySelectorItem = (props: Props) => {
   const { dayName, dayNumber, month, isFirstDay, isLastDay } = dateInfo;
 
   const showMonth = isFirstDay || isLastDay;
+  const variant = isSelected ? "selected" : "default";
 
   return (
-    <CarouselItem className=" basis-1/5 lg:basis-1/6">
+    <CarouselItem className="basis-1/5 lg:basis-1/6">
       <div className="relative px-1">
         {showMonth ? (
           <Typography size="sm" color="foreground">
@@ -28,11 +43,9 @@ const DaySelectorItem = (props: Props) => {
 
         <button
           onClick={() => onDateSelect(dateInfo)}
-          className={cn(
-            "flex size-16 flex-col items-center justify-center rounded-lg border px-4 py-2 transition-colors hoverable:hover:bg-muted",
-            isSelected &&
-              "bg-[#F7F7FC] [&_div]:font-medium [&_div]:text-destructive",
-          )}
+          className={buttonVariants({
+            variant,
+          })}
         >
           <Typography className="cursor-pointer">{dayName}</Typography>
           <Typography className="cursor-pointer">{dayNumber}</Typography>

@@ -1,7 +1,5 @@
-"use client";
-
 import { SetState } from "@/typings/common.type";
-import { Session, SessionDateOption } from "@/typings/date.type";
+import { Session, SessionDateOption } from "@/typings/session.type";
 
 import { Carousel, CarouselContent } from "@/components/ui/carousel";
 import CarouselNavigationButtons from "@/components/ui/carousel/carousel-navigation-buttons";
@@ -16,18 +14,19 @@ interface Props {
 const DaySelector = (props: Props) => {
   const { dates, session, setSession } = props;
 
+  // TODO: replace with skeleton
   if (dates.length === 0) return <>Loading</>;
 
   const handleDateSelect = (date: SessionDateOption) => {
     setSession({
       date: date.date,
-      time: "",
+      time: null,
       timestamp: null,
     });
   };
 
   return (
-    <Carousel opts={{ dragFree: true, slidesToScroll: 6 }}>
+    <Carousel className="max-w-[430px]" opts={{ slidesToScroll: 6 }}>
       <CarouselContent className="items-end">
         {dates.map((dateInfo, index) => (
           <DaySelectorItem
