@@ -187,7 +187,7 @@ const CarouselContent = React.forwardRef<
     <div
       ref={carouselRef}
       style={{ maskImage: getMaskImage() }}
-      className="carousel md:overflow-hidden"
+      className="md:overflow-hidden"
     >
       <div
         ref={ref}

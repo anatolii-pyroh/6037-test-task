@@ -1,5 +1,7 @@
 "use client";
 
+import { Typography } from "@/components/ui/typography";
+
 interface ErrorProps {
   error: Error;
 }
@@ -10,8 +12,12 @@ export default function Error(props: ErrorProps) {
   console.error(error);
 
   return (
-    <div className="flex size-full grow flex-col items-center justify-center">
-      Error
-    </div>
+    <Typography
+      size="xl"
+      color="white"
+      className="flex size-full grow flex-col items-center justify-center"
+    >
+      Oops! Something went wrong.
+    </Typography>
   );
 }

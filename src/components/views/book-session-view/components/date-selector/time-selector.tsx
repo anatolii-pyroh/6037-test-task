@@ -7,7 +7,7 @@ import { Session } from "@/typings/session.type";
 
 import { Carousel, CarouselContent } from "@/components/ui/carousel";
 import CarouselNavigationButtons from "@/components/ui/carousel/carousel-navigation-buttons";
-import TimeSelectorItem from "@/components/views/book-session-view/components/time-selector-item";
+import TimeSelectorItem from "@/components/views/book-session-view/components/date-selector/time-selector-item";
 
 interface Props {
   session: NonNullable<Session>;

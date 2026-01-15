@@ -3,7 +3,7 @@ import { Session, SessionDateOption } from "@/typings/session.type";
 
 import { Carousel, CarouselContent } from "@/components/ui/carousel";
 import CarouselNavigationButtons from "@/components/ui/carousel/carousel-navigation-buttons";
-import DaySelectorItem from "@/components/views/book-session-view/components/day-selector-item";
+import DaySelectorItem from "@/components/views/book-session-view/components/date-selector/day-selector-item";
 
 interface Props {
   dates: SessionDateOption[];

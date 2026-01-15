@@ -3,14 +3,14 @@
 import { useState } from "react";
 import { toast } from "sonner";
 
-import { delay } from "@/lib/common.lib";
+import { wait } from "@/lib/common.lib";
 import { generateDateRanges } from "@/lib/session.lib";
 import { Session, SessionDateOption } from "@/typings/session.type";
 
 import MotionDiv from "@/components/common/motion-div";
 import { Button } from "@/components/ui/button";
-import DaySelector from "@/components/views/book-session-view/components/day-selector";
-import TimeSelector from "@/components/views/book-session-view/components/time-selector";
+import DaySelector from "@/components/views/book-session-view/components/date-selector/day-selector";
+import TimeSelector from "@/components/views/book-session-view/components/date-selector/time-selector";
 
 const DateSelector = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -24,7 +24,7 @@ const DateSelector = () => {
 
     setIsLoading(true);
 
-    await delay(1000);
+    await wait(1000);
 
     toast.success("Session confirmed");
     console.log({ timestamp });

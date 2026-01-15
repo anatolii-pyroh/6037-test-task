@@ -15,16 +15,12 @@ const buttonVariants = cva(
     "whitespace-nowrap text-sm font-semibold",
     "hover:shadow-none",
     "touch-manipulation",
-    "disabled:bg-inactive disabled:pointer-events-none disabled:border-0 disabled:shadow-none",
+    "disabled:pointer-events-none disabled:border-0 disabled:bg-inactive disabled:shadow-none",
   ],
   {
     variants: {
       variant: {
         default: "bg-black text-white shadow-md hover:bg-black/80",
-        success:
-          "bg-supportive-1 text-white shadow-md hover:bg-supportive-1/80",
-        destructive:
-          "bg-destructive text-white shadow-md hover:bg-destructive/80",
         transparent: "bg-transparent text-black hover:no-underline",
       },
       size: {
@@ -32,35 +28,7 @@ const buttonVariants = cva(
         md: "h-10",
         lg: "h-[60px]",
       },
-      withIcon: {
-        true: "",
-        false: "",
-      },
-      iconOnly: {
-        true: "",
-        false: "",
-      },
     },
-    compoundVariants: [
-      { size: "sm", withIcon: false, iconOnly: false, className: clsx("px-4") },
-      { size: "md", withIcon: false, iconOnly: false, className: clsx("px-4") },
-      {
-        size: "lg",
-        withIcon: false,
-        iconOnly: false,
-        className: clsx("min-w-[130px] px-6"),
-      },
-      { size: "sm", withIcon: true, className: clsx("pl-2 pr-4") },
-      { size: "md", withIcon: true, className: clsx("pl-3 pr-4") },
-      {
-        size: "lg",
-        withIcon: true,
-        className: clsx("min-w-[130px] pl-3 pr-5"),
-      },
-      { size: "sm", iconOnly: true, className: clsx("w-8") },
-      { size: "md", iconOnly: true, className: clsx("w-10") },
-      { size: "lg", iconOnly: true, className: clsx("w-12") },
-    ],
   },
 );
 
@@ -104,8 +72,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             variant,
             size,
             className,
-            withIcon: withIcon && !!children,
-            iconOnly: !children && !!svg,
           }),
         )}
         ref={ref}
