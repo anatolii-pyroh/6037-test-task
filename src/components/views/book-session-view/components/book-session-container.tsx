@@ -1,15 +1,22 @@
 import { PropsWithChildren } from "react";
+import { useIsClient } from "usehooks-ts";
 
 import { useBreakpoint } from "@/lib/tailwind";
 import mobileBodyBackground from "@/public/images/mobile-body-background.png";
 
 import ContainerWithBgImage from "@/components/common/container-with-bg-image";
+import PageSpinner from "@/components/common/page-spinner";
 import { Card } from "@/components/ui/card";
 
 const BookSessionContainer = (props: PropsWithChildren) => {
   const { children } = props;
 
+  const isClient = useIsClient();
   const isDesktop = useBreakpoint("md");
+
+  if (!isClient) {
+    return <PageSpinner />;
+  }
 
   if (isDesktop) {
     return (
