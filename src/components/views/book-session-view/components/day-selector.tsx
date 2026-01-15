@@ -26,7 +26,7 @@ const DaySelector = (props: Props) => {
   };
 
   return (
-    <Carousel className="max-w-[430px]" opts={{ slidesToScroll: 6 }}>
+    <Carousel className="md:max-w-[430px]" opts={{ slidesToScroll: 6 }}>
       <CarouselContent className="items-end">
         {dates.map((dateInfo, index) => (
           <DaySelectorItem

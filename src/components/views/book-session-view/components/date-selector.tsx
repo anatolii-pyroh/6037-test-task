@@ -47,7 +47,7 @@ const DateSelector = () => {
       </MotionDiv>
 
       <Button
-        className="mt-auto w-full max-w-[370px]"
+        className="mt-auto w-full md:max-w-[370px]"
         loading={isLoading}
         disabled={!session?.timestamp}
         onClick={handleConfirm}

@@ -1,34 +1,17 @@
-import Image from "next/image";
+"use client";
 
-import { Card } from "@/components/ui/card";
-import { Typography } from "@/components/ui/typography";
+import BookSessionContainer from "@/components/views/book-session-view/components/book-session-container";
 import DateSelector from "@/components/views/book-session-view/components/date-selector";
+import SectionHeading from "@/components/views/book-session-view/components/section-heading";
 
 const BookSessionView = () => {
   return (
     <div className="container flex grow items-center justify-center py-2">
-      <Card className="flex h-screen max-h-[620px] w-full max-w-[568px] flex-col items-center justify-center gap-10 px-6 py-10">
-        <div className="flex items-center gap-5">
-          <Image
-            src="/images/stylist-avatar.png"
-            alt="Book Session"
-            width={120}
-            height={120}
-          />
-
-          <div className="max-w-[310px] space-y-2">
-            <Typography size="xl" className="font-kaisei">
-              Book a Session
-            </Typography>
-            <Typography size="sm" color="foreground">
-              Choose a date and time that is convenient for you to e-meet your
-              stylist
-            </Typography>
-          </div>
-        </div>
+      <BookSessionContainer>
+        <SectionHeading />
 
         <DateSelector />
-      </Card>
+      </BookSessionContainer>
     </div>
   );
 };

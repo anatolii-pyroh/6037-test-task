@@ -33,7 +33,7 @@ const DaySelectorItem = (props: Props) => {
   const variant = isSelected ? "selected" : "default";
 
   return (
-    <CarouselItem className="basis-1/5 md:basis-1/6">
+    <CarouselItem className="basis-auto md:basis-1/6">
       <div className="relative px-1">
         {showMonth ? (
           <Typography size="sm" color="foreground">

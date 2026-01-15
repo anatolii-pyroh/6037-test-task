@@ -1,3 +1,5 @@
+import { cn } from "@/lib/common.lib";
+
 import { CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 interface Props {
@@ -5,10 +7,12 @@ interface Props {
 }
 
 const CarouselNavigationButtons = ({ className }: Props) => {
+  const styles = cn("max-md:hidden", className);
+
   return (
     <>
-      <CarouselPrevious className={className} />
-      <CarouselNext className={className} />
+      <CarouselPrevious className={styles} />
+      <CarouselNext className={styles} />
     </>
   );
 };

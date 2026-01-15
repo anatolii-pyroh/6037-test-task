@@ -7,6 +7,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import * as React from "react";
 
 import { cn } from "@/lib/common.lib";
+import { useBreakpoint } from "@/lib/tailwind";
 
 import { Button } from "@/components/ui/button";
 
@@ -166,7 +167,11 @@ const CarouselContent = React.forwardRef<
   const { carouselRef, orientation, canScrollPrev, canScrollNext } =
     useCarousel();
 
+  const isDesktop = useBreakpoint("md");
+
   const getMaskImage = () => {
+    if (!isDesktop) return noMask;
+
     if (canScrollPrev && canScrollNext) {
       return bothMasks;
     }
@@ -182,7 +187,7 @@ const CarouselContent = React.forwardRef<
     <div
       ref={carouselRef}
       style={{ maskImage: getMaskImage() }}
-      className="overflow-x-hidden"
+      className="carousel md:overflow-hidden"
     >
       <div
         ref={ref}

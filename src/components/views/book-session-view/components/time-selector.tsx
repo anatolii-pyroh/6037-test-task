@@ -37,7 +37,7 @@ const TimeSelector = (props: Props) => {
   };
 
   return (
-    <Carousel className="max-w-[435px]" opts={{ slidesToScroll: 5 }}>
+    <Carousel className="md:max-w-[435px]" opts={{ slidesToScroll: 5 }}>
       <CarouselContent>
         {timeSlots.map(({ hour, minute, timeString }, index) => (
           <TimeSelectorItem
@@ -52,7 +52,7 @@ const TimeSelector = (props: Props) => {
         ))}
       </CarouselContent>
 
-      <CarouselNavigationButtons />
+      <CarouselNavigationButtons className="md:top-[calc(50%+10.5px)]" />
     </Carousel>
   );
 };
