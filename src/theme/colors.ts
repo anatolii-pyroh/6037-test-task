@@ -8,6 +8,7 @@ const colors = {
   body: colorVarWithAlphaValue("var(--body)"),
   border: colorVarWithAlphaValue("var(--border)"),
   muted: colorVarWithAlphaValue("var(--muted)"),
+  inactive: colorVarWithAlphaValue("var(--inactive)"),
   foreground: {
     DEFAULT: colorVarWithAlphaValue("var(--foreground)"),
     muted: colorVarWithAlphaValue("var(--foreground-muted)"),

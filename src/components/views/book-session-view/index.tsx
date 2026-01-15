@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Typography } from "@/components/ui/typography";
 import DateSelector from "@/components/views/book-session-view/components/date-selector";
@@ -29,8 +28,6 @@ const BookSessionView = () => {
         </div>
 
         <DateSelector />
-
-        <Button className="w-full max-w-[370px]">Confirm</Button>
       </Card>
     </div>
   );

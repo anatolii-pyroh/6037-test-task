@@ -15,7 +15,7 @@ const buttonVariants = cva(
     "whitespace-nowrap text-sm font-semibold",
     "hover:shadow-none",
     "touch-manipulation",
-    "disabled:pointer-events-none disabled:border-0 disabled:text-[#c0c1d1] disabled:shadow-none",
+    "disabled:bg-inactive disabled:pointer-events-none disabled:border-0 disabled:shadow-none",
   ],
   {
     variants: {

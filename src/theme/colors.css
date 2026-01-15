@@ -8,6 +8,7 @@
     --muted: theme(colors.slate.50);
     --foreground: #8f91a1;
     --foreground-muted: #f7f7fc;
+    --inactive: #dadbe8;
     --destructive: #db4e66;
     --supportive-01: #4ca154;
     --supportive-muted-01: #e2fbe8;

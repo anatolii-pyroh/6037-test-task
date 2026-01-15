@@ -226,6 +226,8 @@ const CarouselPrevious = React.forwardRef<
 >(({ className, variant = "outline", size = "icon", ...props }, ref) => {
   const { orientation, scrollPrev, canScrollPrev } = useCarousel();
 
+  const disabled = !canScrollPrev;
+
   return (
     <Button
       ref={ref}
@@ -235,9 +237,10 @@ const CarouselPrevious = React.forwardRef<
         orientation === "horizontal"
           ? "lg:-left-12 lg:top-1/2 lg:-translate-y-1/2"
           : "rotate-90 lg:-top-12 lg:left-1/2 lg:-translate-x-1/2",
+        disabled && "!bg-transparent disabled:text-[#c0c1d1]",
         className,
       )}
-      disabled={!canScrollPrev}
+      disabled={disabled}
       onClick={scrollPrev}
       svg={ChevronLeft}
       {...props}
@@ -252,6 +255,8 @@ const CarouselNext = React.forwardRef<
 >(({ className, variant = "outline", size = "icon", ...props }, ref) => {
   const { orientation, scrollNext, canScrollNext } = useCarousel();
 
+  const disabled = !canScrollNext;
+
   return (
     <Button
       ref={ref}
@@ -261,9 +266,10 @@ const CarouselNext = React.forwardRef<
         orientation === "horizontal"
           ? "lg:-right-12 lg:top-1/2 lg:-translate-y-1/2"
           : "rotate-90 lg:-bottom-12 lg:left-1/2 lg:-translate-x-1/2",
+        disabled && "!bg-transparent disabled:text-[#c0c1d1]",
         className,
       )}
-      disabled={!canScrollNext}
+      disabled={disabled}
       onClick={scrollNext}
       svg={ChevronRight}
       {...props}
