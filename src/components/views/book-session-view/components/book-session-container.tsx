@@ -1,14 +1,10 @@
 import { PropsWithChildren } from "react";
 
 import { useBreakpoint } from "@/lib/tailwind";
+import mobileBodyBackground from "@/public/images/mobile-body-background.png";
 
+import ContainerWithBgImage from "@/components/common/container-with-bg-image";
 import { Card } from "@/components/ui/card";
-import { DialogTitle } from "@/components/ui/dialog";
-import {
-  Drawer,
-  DrawerContent,
-  DrawerScrollArea,
-} from "@/components/ui/drawer";
 
 const BookSessionContainer = (props: PropsWithChildren) => {
   const { children } = props;
@@ -17,28 +13,25 @@ const BookSessionContainer = (props: PropsWithChildren) => {
 
   if (isDesktop) {
     return (
-      <Card className="flex h-screen max-h-[620px] w-full max-w-[568px] flex-col items-center justify-center gap-10 px-6 py-10">
-        {children}
-      </Card>
+      <div className="container flex grow items-center justify-center py-2">
+        <Card className="flex h-screen max-h-[620px] w-full max-w-[568px] flex-col items-center justify-center gap-10 px-6 py-10">
+          {children}
+        </Card>
+      </div>
     );
   }
 
   return (
-    <Drawer dismissible={false} open>
-      <DrawerContent
-        className="h-full max-h-[540px]"
-        aria-description="book-session-drawer"
-      >
-        <DrawerScrollArea
-          id="book-session-drawer"
-          className="flex flex-col gap-8"
-        >
-          <DialogTitle className="sr-only">Book a Session</DialogTitle>
+    <div className="flex h-screen flex-col">
+      <ContainerWithBgImage
+        bgImage={mobileBodyBackground.src}
+        className="size-full bg-cover bg-center bg-no-repeat"
+      />
 
-          {children}
-        </DrawerScrollArea>
-      </DrawerContent>
-    </Drawer>
+      <div className="-mt-5 flex h-screen max-h-fit min-h-[50dvh] shrink-0 flex-col gap-8 overflow-hidden rounded-t-[24px] bg-white px-5 py-8 max-sm:min-h-[65dvh]">
+        {children}
+      </div>
+    </div>
   );
 };
 

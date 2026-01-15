@@ -6,13 +6,11 @@ import SectionHeading from "@/components/views/book-session-view/components/sect
 
 const BookSessionView = () => {
   return (
-    <div className="container flex grow items-center justify-center py-2">
-      <BookSessionContainer>
-        <SectionHeading />
+    <BookSessionContainer>
+      <SectionHeading />
 
-        <DateSelector />
-      </BookSessionContainer>
-    </div>
+      <DateSelector />
+    </BookSessionContainer>
   );
 };
 

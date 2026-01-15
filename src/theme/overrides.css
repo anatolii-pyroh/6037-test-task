@@ -8,12 +8,4 @@
     width: fit-content !important;
     height: fit-content !important;
   }
-
-  #book-session-drawer::-webkit-scrollbar {
-    display: none;
-  }
-
-  #book-session-drawer {
-    -ms-overflow-style: none;
-  }
 }
