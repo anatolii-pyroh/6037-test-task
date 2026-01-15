@@ -3,7 +3,9 @@ import { Session, SessionDateOption } from "@/typings/session.type";
 
 import { Carousel, CarouselContent } from "@/components/ui/carousel";
 import CarouselNavigationButtons from "@/components/ui/carousel/carousel-navigation-buttons";
-import DaySelectorItem from "@/components/views/book-session-view/components/date-selector/day-selector-item";
+import DaySelectorItem, {
+  DaySelectorItemSkeleton,
+} from "@/components/views/book-session-view/components/date-selector/day-selector-item";
 
 interface Props {
   dates: SessionDateOption[];
@@ -14,8 +16,17 @@ interface Props {
 const DaySelector = (props: Props) => {
   const { dates, session, setSession } = props;
 
-  // TODO: replace with skeleton
-  if (dates.length === 0) return <>Loading</>;
+  if (!dates.length) {
+    return (
+      <Carousel className="pt-6 md:max-w-[430px]" opts={{ slidesToScroll: 6 }}>
+        <CarouselContent>
+          {Array.from({ length: 10 }).map((_, index) => (
+            <DaySelectorItemSkeleton key={index} />
+          ))}
+        </CarouselContent>
+      </Carousel>
+    );
+  }
 
   const handleDateSelect = (date: SessionDateOption) => {
     setSession({

@@ -3,6 +3,7 @@ import { cva } from "class-variance-authority";
 import { SessionDateOption } from "@/typings/session.type";
 
 import { CarouselItem } from "@/components/ui/carousel";
+import { Skeleton } from "@/components/ui/skeleton";
 import { Typography } from "@/components/ui/typography";
 
 const buttonVariants = cva(
@@ -50,6 +51,16 @@ const DaySelectorItem = (props: Props) => {
           <Typography className="cursor-pointer">{dayName}</Typography>
           <Typography className="cursor-pointer">{dayNumber}</Typography>
         </button>
+      </div>
+    </CarouselItem>
+  );
+};
+
+export const DaySelectorItemSkeleton = () => {
+  return (
+    <CarouselItem className="basis-auto md:basis-1/6">
+      <div className="relative px-1">
+        <Skeleton className="size-16 rounded-lg" />
       </div>
     </CarouselItem>
   );

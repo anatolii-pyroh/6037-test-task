@@ -15,7 +15,7 @@ export default function Error(props: ErrorProps) {
     <Typography
       size="xl"
       color="white"
-      className="flex size-full grow flex-col items-center justify-center"
+      className="flex size-full grow flex-col items-center justify-center font-semibold"
     >
       Oops! Something went wrong.
     </Typography>
