@@ -1,4 +1,4 @@
-## Anatolii Pyroh test task for Gameloft
+## Anatolii Pyroh test task for 6037
 
 npm i
 npm run dev
