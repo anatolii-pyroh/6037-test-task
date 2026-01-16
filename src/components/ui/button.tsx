@@ -10,7 +10,7 @@ import { Icon } from "@/components/ui/icon";
 
 const buttonVariants = cva(
   [
-    "inline-flex items-center justify-center gap-2",
+    "inline-flex items-center justify-center gap-2 py-[18px]",
     "rounded-full transition-colors",
     "whitespace-nowrap text-sm font-semibold",
     "hover:shadow-none",

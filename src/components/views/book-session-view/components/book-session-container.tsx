@@ -1,6 +1,7 @@
 import { PropsWithChildren } from "react";
 import { useIsClient } from "usehooks-ts";
 
+import { cn } from "@/lib/common.lib";
 import { useBreakpoint } from "@/lib/tailwind";
 
 import PageSpinner from "@/components/common/page-spinner";
@@ -28,13 +29,17 @@ const BookSessionContainer = (props: PropsWithChildren) => {
   }
 
   return (
-    <div className="flex h-screen flex-col">
+    <>
       <MobileSectionHeading />
 
-      <div className="z-10 -mt-5 flex h-screen max-h-fit min-h-[50dvh] shrink-0 flex-col gap-8 overflow-hidden rounded-t-[24px] bg-white px-5 py-8 max-md:min-h-[68dvh]">
+      <div
+        className={cn(
+          "absolute inset-x-0 bottom-0 z-10 flex h-[65dvh] flex-col overflow-y-auto overflow-x-hidden rounded-t-[24px] bg-white px-5 py-8",
+        )}
+      >
         {children}
       </div>
-    </div>
+    </>
   );
 };
 

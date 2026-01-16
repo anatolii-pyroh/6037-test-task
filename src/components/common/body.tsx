@@ -21,12 +21,12 @@ const Body = (props: PropsWithChildren) => {
       bgImage={backgroundImage.src}
       className={cn(
         poppins.className,
-        "flex min-h-screen flex-col bg-cover bg-center bg-no-repeat",
+        "flex flex-col bg-cover bg-center bg-no-repeat md:min-h-screen",
       )}
     >
       <Header />
 
-      <main className="flex min-h-[80vh] flex-1 flex-col">{children}</main>
+      <main className="flex flex-1 flex-col">{children}</main>
 
       <Toaster />
     </ContainerWithBgImage>

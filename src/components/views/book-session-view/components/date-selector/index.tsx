@@ -40,7 +40,7 @@ const DateSelector = () => {
         setSession={setSession}
       />
 
-      <MotionDiv visible={!!session}>
+      <MotionDiv className="max-md:my-8" visible={!!session}>
         {session ? (
           <TimeSelector session={session} setSession={setSession} />
         ) : null}

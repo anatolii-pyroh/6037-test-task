@@ -13,7 +13,7 @@ const MobileSectionHeading = () => {
   return (
     <ContainerWithBgImage
       bgImage={mobileMaskImage.src}
-      className="flex size-full items-center justify-between overflow-hidden bg-[#F29B18] bg-cover bg-top bg-no-repeat pl-5"
+      className="flex h-[calc(35dvh+24px)] w-full items-center justify-between overflow-hidden bg-[#F29B18] bg-cover bg-top bg-no-repeat pl-5"
     >
       <div className="flex flex-1 flex-col">
         <Typography size="xl" color="white" className="text-[27px]">
