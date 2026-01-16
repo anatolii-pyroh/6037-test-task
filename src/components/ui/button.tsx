@@ -13,15 +13,15 @@ const buttonVariants = cva(
     "inline-flex items-center justify-center gap-2 py-[18px]",
     "rounded-full transition-colors",
     "whitespace-nowrap text-sm font-semibold",
-    "hover:shadow-none",
+    "hoverable:hover:shadow-none",
     "touch-manipulation",
     "disabled:pointer-events-none disabled:border-0 disabled:bg-inactive disabled:shadow-none",
   ],
   {
     variants: {
       variant: {
-        default: "bg-black text-white shadow-md hover:bg-black/80",
-        transparent: "bg-transparent text-black hover:no-underline",
+        default: "bg-black text-white shadow-md hoverable:hover:bg-black/80",
+        transparent: "bg-transparent text-black hoverable:hover:no-underline",
       },
       size: {
         sm: "h-8",

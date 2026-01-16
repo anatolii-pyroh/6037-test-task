@@ -19,12 +19,12 @@ Next.js - React framework for routing, file-based structure
 
 Tailwind CSS - utility-first styling
 
-Shadcn UI - component library built on top of Tailwind CSS
+Shadcn UI - modern component library built on top of Tailwind CSS
 
 Lucide-react - icons library
 
-Sonner - toast notifications (used for session book confirmation)
+Sonner - toast notifications for better UX
 
 ### **Logic**
 
-Date-fns - library for Date data manipulation
+Date-fns - library for easy and comfortable Date data manipulation
