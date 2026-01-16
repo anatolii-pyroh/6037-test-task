@@ -14,9 +14,6 @@ const colors = {
     muted: colorVarWithAlphaValue("var(--foreground-muted)"),
   },
   destructive: colorVarWithAlphaValue("var(--destructive)"),
-  supportive: {
-    1: colorVarWithAlphaValue("var(--supportive-01)"),
-  },
 } satisfies CustomThemeConfig["colors"];
 
 export default colors;
